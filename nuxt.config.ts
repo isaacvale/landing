@@ -14,6 +14,12 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    public: {
+      envName: process.env.NUXT_PUBLIC_ENV_NAME || 'local'
+    }
+  },
+
   content: {
     experimental: {
       sqliteConnector: 'native'

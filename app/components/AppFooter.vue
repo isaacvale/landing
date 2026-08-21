@@ -6,6 +6,8 @@ const links = [
   { label: 'Status', to: '#' },
   { label: 'Privacy', to: '#' }
 ]
+
+const { public: { envName } } = useRuntimeConfig()
 </script>
 
 <template>
@@ -19,6 +21,13 @@ const links = [
       <p class="text-sm text-dimmed">
         Built with Nuxt UI • © {{ new Date().getFullYear() }}
       </p>
+      <UBadge
+        :label="`env: ${envName}`"
+        color="neutral"
+        variant="subtle"
+        size="sm"
+        class="ml-2"
+      />
     </template>
 
     <template #right>
